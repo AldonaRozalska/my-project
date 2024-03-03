@@ -1,29 +1,47 @@
 def calculation(x, y, operator):
 
-    if operator == '+':
+    try:
+
+     if operator == '+':
 
         total = x + y
         return total
     
-    elif operator == '-':
-
+     elif operator == '-':
+ 
         total = x - y
         return total
     
-    elif operator == 'x':
+     elif operator == 'x':
 
         total = x * y
         return total
     
-    elif operator == '/':
+     elif operator == '/':
 
         total = x / y
         return total
     
+    except ZeroDivisionError:
+     print("You cannot divide by zero")
+    
     num1 = float(input("Please enter a number : "))
-    num2 = float(input("Please enter a number : "))    
+    num2 = float(input("Please enter a number : "))  
 
-    operator = input("Enter the math symbol you would like to use : ")
 
-    calc = calculation(num1, num2, operator)
+    ops = ['+', "-", 'x', '/']
+    while True:
+     operator = input("Enter the math symbol you would like to use : ")
+
+     if operator not in ops:
+        print('''Your selected is not valid.
+            Please use one of the following symbols : 
+              +(addition), -(subtraction), *(multiplication), /(division)''')
+        continue
+
+    else:
+        print('Calculating...')
+        break
+
+        calc = calculation(num1, num2, operator)
     print(calc)
