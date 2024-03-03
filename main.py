@@ -44,4 +44,5 @@ def calculation(x, y, operator):
         break
 
         calc = calculation(num1, num2, operator)
-    print(calc)
+    print(calc) 
+    print("Fixed")
